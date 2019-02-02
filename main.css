@@ -1,0 +1,163 @@
+:root {
+    --opacity-rgba: .7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Major Mono Display', monospace;
+    background: url('daylight-environment-forest-459225.jpg') center/cover no-repeat fixed;
+}
+
+.main {
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+    align-items: center;
+    justify-items: center;
+    text-align: center
+}
+
+.hours,
+.minutes,
+.seconds {
+    align-self: end;
+    width: 100%;
+    height: auto;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 53% 100%, 0 100%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 53% 100%, 0 100%, 0% 25%);
+}
+
+.month,
+.day,
+.year {
+    align-self: start;
+    width: 100%;
+    height: auto;
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0% 75%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0% 75%, 0 0);
+}
+
+.hours h2,
+.minutes h2,
+.seconds h2 {
+    padding: 3rem 2rem 2rem 2rem;
+    font-size: 5rem;
+    color: black;
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
+    color: #fff
+}
+
+.month h2,
+.day h2,
+.year h2 {
+    padding: 1rem 2rem 4rem 2rem;
+    font-size: 5rem;
+    color: black;
+    border-top: 2px solid rgba(0, 0, 0, .4);
+    color: #fff
+}
+
+.month h2 {
+    letter-spacing: -12px;
+}
+
+.hours p,
+.minutes p,
+.seconds p {
+    color: #fff;
+    padding: 1rem;
+}
+
+.hours p,
+.month p,
+.day p {
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem;
+}
+
+
+.month p,
+.day p,
+.year p {
+    color: #fff;
+    padding: 1rem;
+}
+
+.month p,
+.day p {
+    padding: .8rem;
+}
+
+.hours p span,
+.month p span,
+.day p span {
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #fff;
+    padding: 2.2px;
+}
+
+
+.hours {
+    background: rgb(24, 198, 183);
+    background: linear-gradient(90deg, rgba(24, 198, 183, var(--opacity-rgba)) 3%, rgba(20, 144, 173, var(--opacity-rgba)) 87%);
+}
+
+.minutes {
+    background: rgb(211, 87, 122);
+    background: linear-gradient(90deg, rgba(211, 87, 122, var(--opacity-rgba)) 3%, rgba(232, 146, 91, var(--opacity-rgba)) 87%);
+}
+
+.seconds {
+    background: rgb(103, 150, 190);
+    background: linear-gradient(90deg, rgba(103, 150, 190, var(--opacity-rgba)) 3%, rgba(173, 59, 183, var(--opacity-rgba)) 87%);
+}
+
+.month {
+    background: rgb(60, 179, 113);
+    background: linear-gradient(90deg, rgba(60, 179, 113, var(--opacity-rgba)) 3%, rgba(50, 205, 50, var(--opacity-rgba)) 87%);
+}
+
+.day {
+    background: rgb(59, 170, 147);
+    background: linear-gradient(90deg, rgba(59, 170, 147, var(--opacity-rgba)) 3%, rgba(197, 234, 192, var(--opacity-rgba)) 87%);
+}
+
+.year {
+    background: rgb(242, 74, 63);
+    background: linear-gradient(90deg, rgba(242, 74, 63, var(--opacity-rgba)) 3%, rgba(151, 49, 79, var(--opacity-rgba)) 87%);
+}
+
+@media(max-width: 750px) {
+    .main {
+        margin: auto;
+    }
+}
+
+@media(max-width: 600px) {
+
+    .main {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hours,
+    .minutes,
+    .seconds,
+    .month,
+    .day,
+    .year {
+        margin: 10px auto;
+    }
+}
