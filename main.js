@@ -15,7 +15,7 @@ setInterval(() => {
     let date = new Date();
     let hour = date.getHours();
     hours.textContent = (hour > 12 ? hour - 12 : hour);
-    label.textContent = (hour > 12 ? 'pm' : 'am');
+    label.textContent = (hour >= 12 ? 'pm' : 'am');
     minutes.textContent = date.getMinutes();
     seconds.textContent = date.getSeconds();
     month.textContent = date.getMonth()+1;
